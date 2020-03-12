@@ -40,7 +40,7 @@ module.exports.typeOf = typeOf;
 *                  Input as an arugment. Array may or may not have a value or even exist
 * @param {Number} Num: Input as an argument. The number may have any numeric
 *
-* @return {Index[0]}: If array is not an array after checked, return an empty array[];
+* @return {array}: If array is not an array after checked, return an empty array[];
 * If the number doesnt have a value or is NaN, the first element shall return in the array only, or else
 * other if arguments do not pass the test, return the first number items of array
 */
@@ -165,7 +165,7 @@ module.exports.unique = unique;
 * to return an array of all the elements that pass the conditional test.
 *
 * @param {Array} array: The array over which to inspect. Input as an argument
-* @param {Function} test: The Function to be applied to each value in the collection. Input as argument
+* @param {Function} test: The Function to be applied to index and the entire collection at each iteration. Input as argument
 * @return {Array}: array : An array only of the values that past the test/condition (returned true)
 */
  function filter (array, test){
@@ -184,7 +184,7 @@ module.exports.unique = unique;
 * That return false after test and put them into a new array
 *
 * @param {Array} array: The array over which to inspect. Input as an argument.
-* @param {function} test: The Function to be applied to each value in the collection. Input as an argument.
+* @param {function} test: The Function to be applied to the element, index and the entire collection at each iteration. Input as an argument.
 *
 * @return {Array}: array: This will return a new array of elements that passed the test (or returned false)
 *
@@ -265,7 +265,7 @@ module.exports.pluck = pluck;
 *
 * @return {Boolean}: true - Returns a boolean value of true if every element in the array is true
 * @return {Boolean}: false -  If just one of the elements returns false, return a boolean value of false
-* @return {Boolean}: If no callback function, Every Returns a boolean value of false if array is greater than zero, otherwise it returns true
+* @return {Boolean}: If <function> is not provided, return true if every element is truthy, otherwise return false
 */
 //returns a boolean
 function every(collection,test){
@@ -293,7 +293,7 @@ module.exports.every = every;
 * @param: {function}: action: The Function to be applied to each value in the collection. Input as argument,
 *
 * @return {Value}: Returns a boolean value of true if element passes the test, otherwise it returns false
-* @return {Boolean}: If no callback function, Some Returns a boolean value of true if array is greater than zero, otherwise it returns false
+* @return {Boolean}: If <function> is not provided return true if at least one element is truthy, otherwise return false
 */
 //returns a boolean
 function some(collection,action){
