@@ -161,7 +161,7 @@ module.exports.each = each;
 }
 module.exports.unique = unique;
 
-/** filter:  Tests the index and the entire collection at each iteration.
+/** filter:  Tests the element, index and the entire collection at each iteration.
 * to return an array of all the elements that pass the conditional test.
 *
 * @param {Array} array: The array over which to inspect. Input as an argument
@@ -180,7 +180,7 @@ module.exports.unique = unique;
  
  module.exports.filter = filter;
  
-/** reject is the opposite of _.filter Tests the index and the entire collection at each iteration.
+/** reject is the opposite of _.filter Tests the element, index and the entire collection at each iteration.
 * That return false after test and put them into a new array
 *
 * @param {Array} array: The array over which to inspect. Input as an argument.
@@ -265,7 +265,8 @@ module.exports.pluck = pluck;
 *
 * @return {Boolean}: true - Returns a boolean value of true if every element in the array is true
 * @return {Boolean}: false -  If just one of the elements returns false, return a boolean value of false
-* @return {Boolean}: If <function> is not provided, return true if every element is truthy, otherwise return false
+*                             If <function> is not provided, return true if every element is truthy, otherwise return false
+* 
 */
 //returns a boolean
 function every(collection,test){
@@ -293,7 +294,8 @@ module.exports.every = every;
 * @param: {function}: action: The Function to be applied to each value in the collection. Input as argument,
 *
 * @return {Value}: Returns a boolean value of true if element passes the test, otherwise it returns false
-* @return {Boolean}: If <function> is not provided return true if at least one element is truthy, otherwise return false
+*                  If <function> is not provided return true if at least one element is truthy, otherwise return false
+* 
 */
 //returns a boolean
 function some(collection,action){
